@@ -1,26 +1,148 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Paleta Forja Atômica — extraída da logo */
+  --background: #f6f8f9;
+  --surface: #ffffff;
+  --foreground: #10333e;
+  --muted: #5b7681;
+  --border: #dbe5e8;
+
+  --teal-950: #06222c;
+  --teal-900: #0a2f3b;
+  --teal-800: #0d3b4a;
+  --teal-700: #11485a;
+  --teal-600: #17596e;
+  --teal-500: #1f6f88;
+
+  --gold-300: #f2cf7d;
+  --gold-400: #ecc25f;
+  --gold-500: #e3af43;
+  --gold-600: #cf9a2f;
+  --gold-700: #a97b22;
+}
+
+.dark {
+  --background: #06222c;
+  --surface: #0d3b4a;
+  --foreground: #e8f1f4;
+  --muted: #9db8c1;
+  --border: #17596e;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --color-forge-950: var(--teal-950);
+  --color-forge-900: var(--teal-900);
+  --color-forge-800: var(--teal-800);
+  --color-forge-700: var(--teal-700);
+  --color-forge-600: var(--teal-600);
+  --color-forge-500: var(--teal-500);
+
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --color-gold-600: var(--gold-600);
+  --color-gold-700: var(--gold-700);
+
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-oswald);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar discreta combinando com o tema */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--teal-600);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-500);
+}
+
+/* Textura hexagonal sutil (ecoa o fundo da logo) */
+.hex-pattern {
+  background-image: repeating-linear-gradient(
+      60deg,
+      transparent 0 22px,
+      rgba(232, 184, 75, 0.05) 22px 23px
+    ),
+    repeating-linear-gradient(
+      -60deg,
+      transparent 0 22px,
+      rgba(232, 184, 75, 0.05) 22px 23px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 22px,
+      rgba(232, 184, 75, 0.04) 22px 23px
+    );
+}
+
+/* Gradiente dourado para textos de destaque */
+.text-gold-gradient {
+  background: linear-gradient(120deg, #f2cf7d 0%, #e3af43 45%, #cf9a2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animação de brilho pulsante usada no hero */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.08);
+  }
+}
+.animate-glow {
+  animation: glow-pulse 5s ease-in-out infinite;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--border) 25%,
+    color-mix(in srgb, var(--border) 55%, var(--surface)) 37%,
+    var(--border) 63%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
 }

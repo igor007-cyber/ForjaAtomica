@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a2f3b"/>
+      <stop offset="1" stop-color="#17596e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f2cf7d"/>
+      <stop offset="0.5" stop-color="#e3af43"/>
+      <stop offset="1" stop-color="#cf9a2f"/>
+    </linearGradient>
+    <pattern id="hex" width="56" height="97" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
+      <polygon points="28,2 54,17 54,48 28,63 2,48 2,17" fill="none" stroke="#e3af43" stroke-opacity="0.07" stroke-width="2"/>
+      <polygon points="28,50.5 54,65.5 54,96.5 28,111.5 2,96.5 2,65.5" fill="none" stroke="#e3af43" stroke-opacity="0.05" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect width="800" height="800" fill="url(#hex)"/>
+  <circle cx="400" cy="360" r="215" fill="#06222c" opacity="0.55"/>
+  <circle cx="400" cy="360" r="215" fill="none" stroke="url(#gold)" stroke-width="7"/>
+  <circle cx="400" cy="360" r="238" fill="none" stroke="url(#gold)" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="4 10"/>
+  <text x="400" y="360" font-size="170" text-anchor="middle" dominant-baseline="central">⬡</text>
+  <text x="400" y="660" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="url(#gold)" letter-spacing="2">ORGANIZADOR HEXAGONAL</text>
+  <text x="400" y="710" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="middle" fill="#9db8c1" letter-spacing="6">FORJA ATÔMICA · 3D</text>
+</svg>
