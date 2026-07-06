@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { WHATSAPP_CONTACT_URL } from "@/src/utils/whatsapp";
+import { WHATSAPP_BASE_URL } from "@/src/utils/whatsapp";
 
 export function CallToAction() {
   return (
@@ -34,7 +34,7 @@ export function CallToAction() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href={WHATSAPP_CONTACT_URL}
+              href={WHATSAPP_BASE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 px-8 py-4 text-base font-bold text-forge-950 shadow-xl shadow-gold-600/30 transition-all hover:from-gold-300 hover:to-gold-500 active:scale-[0.98]"

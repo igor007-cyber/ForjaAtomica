@@ -1,22 +1,15 @@
 import type { CartItem } from "@/src/types";
 import { formatCurrency } from "./format";
 
-/** Número do WhatsApp da loja no formato internacional (só dígitos): +55 88 99330-0587. */
-export const WHATSAPP_NUMBER = "5588993300587";
+/** Número do WhatsApp da loja no formato internacional (só dígitos): +55 88 93300-5871. */
+export const WHATSAPP_NUMBER = "5588933005871";
 
 /**
- * Base usada para MONTAR O PEDIDO. O formato `wa.me/<número>` é o único que
- * garante o texto pré-preenchido (produtos, quantidades e total) de forma
- * confiável em todos os dispositivos.
+ * Link do WhatsApp da loja. O formato `wa.me/<número>` abre a conversa em
+ * qualquer aparelho e é o único que garante o pedido pré-preenchido
+ * (produtos, quantidades e total) no checkout.
  */
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
-
-/**
- * Link oficial curto da loja, usado nos botões simples de contato (rodapé,
- * página inicial). Abre a mesma conversa, mas NÃO aceita pedido pré-preenchido
- * — por isso o checkout usa `WHATSAPP_BASE_URL` acima.
- */
-export const WHATSAPP_CONTACT_URL = "https://wa.me/message/5I52HAIMSCDDN1";
 
 export function buildOrderMessage(
   customerName: string,

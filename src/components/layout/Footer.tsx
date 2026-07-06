@@ -2,7 +2,7 @@ import Image from "next/image";
 import { asset } from "@/src/utils/asset";
 import Link from "next/link";
 import { categories } from "@/src/data/categories";
-import { WHATSAPP_CONTACT_URL } from "@/src/utils/whatsapp";
+import { WHATSAPP_BASE_URL } from "@/src/utils/whatsapp";
 
 const socialLinks = [
   { label: "Instagram", icon: "📸", href: "https://instagram.com/forjaatomica3d" },
@@ -96,7 +96,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm text-white/70">
               <li>
                 <a
-                  href={WHATSAPP_CONTACT_URL}
+                  href={WHATSAPP_BASE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-gold-400"
