@@ -1,15 +1,14 @@
 import type { CartItem } from "@/src/types";
 import { formatCurrency } from "./format";
 
+/** Número do WhatsApp da loja no formato internacional (só dígitos): +55 88 99330-0587. */
+export const WHATSAPP_NUMBER = "5588993300587";
+
 /**
- * Link oficial do WhatsApp da loja.
- * Obs.: links do formato api.whatsapp.com/message/<código> não aceitam texto
- * pré-preenchido de forma garantida em todos os dispositivos; por isso o
- * parâmetro `text` é anexado como melhor esforço. Se possuir o número puro,
- * troque por `https://wa.me/55XXXXXXXXXXX` para prefill 100% confiável.
+ * Link oficial do WhatsApp da loja. O formato `wa.me/<número>` garante o
+ * texto pré-preenchido de forma confiável em todos os dispositivos.
  */
-export const WHATSAPP_BASE_URL =
-  "https://api.whatsapp.com/message/5I52HAIMSCDDN1?autoload=1&app_absent=0&utm_source=ig";
+export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 
 export function buildOrderMessage(
   customerName: string,
@@ -39,7 +38,7 @@ export function buildOrderMessage(
 }
 
 export function buildWhatsAppUrl(message: string): string {
-  return `${WHATSAPP_BASE_URL}&text=${encodeURIComponent(message)}`;
+  return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
 }
 
 export function openWhatsAppOrder(
