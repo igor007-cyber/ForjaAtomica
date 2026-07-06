@@ -5,10 +5,18 @@ import { formatCurrency } from "./format";
 export const WHATSAPP_NUMBER = "5588993300587";
 
 /**
- * Link oficial do WhatsApp da loja. O formato `wa.me/<número>` garante o
- * texto pré-preenchido de forma confiável em todos os dispositivos.
+ * Base usada para MONTAR O PEDIDO. O formato `wa.me/<número>` é o único que
+ * garante o texto pré-preenchido (produtos, quantidades e total) de forma
+ * confiável em todos os dispositivos.
  */
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+
+/**
+ * Link oficial curto da loja, usado nos botões simples de contato (rodapé,
+ * página inicial). Abre a mesma conversa, mas NÃO aceita pedido pré-preenchido
+ * — por isso o checkout usa `WHATSAPP_BASE_URL` acima.
+ */
+export const WHATSAPP_CONTACT_URL = "https://wa.me/message/5I52HAIMSCDDN1";
 
 export function buildOrderMessage(
   customerName: string,
