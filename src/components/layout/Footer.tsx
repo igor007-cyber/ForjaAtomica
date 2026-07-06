@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/src/utils/asset";
 import Link from "next/link";
 import { categories } from "@/src/data/categories";
 import { WHATSAPP_BASE_URL } from "@/src/utils/whatsapp";
@@ -18,7 +19,7 @@ export function Footer() {
           {/* Marca */}
           <div>
             <Image
-              src="/logo-lettering.jpg"
+              src={asset("/logo-lettering.jpg")}
               alt="Forja Atômica — Impressão 3D"
               width={200}
               height={112}

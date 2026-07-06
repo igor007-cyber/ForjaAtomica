@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/src/contexts/AuthContext";
 import { useCart } from "@/src/contexts/CartContext";
 import { useToast } from "@/src/contexts/ToastContext";
+import { asset } from "@/src/utils/asset";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
@@ -44,7 +45,7 @@ export function Navbar() {
           aria-label="Forja Atômica — página inicial"
         >
           <Image
-            src="/logo-perfil.jpg"
+            src={asset("/logo-perfil.jpg")}
             alt="Logo Forja Atômica"
             width={40}
             height={40}

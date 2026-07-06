@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { asset } from "@/src/utils/asset";
 
 const stats = [
   { value: "500+", label: "Peças entregues" },
@@ -114,7 +115,7 @@ export function Hero() {
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
             <Image
-              src="/logo-perfil.jpg"
+              src={asset("/logo-perfil.jpg")}
               alt="Logo Forja Atômica Impressão 3D"
               width={448}
               height={448}

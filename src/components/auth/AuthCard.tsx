@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { asset } from "@/src/utils/asset";
 
 interface AuthCardProps {
   title: string;
@@ -24,7 +25,7 @@ export function AuthCard({ title, subtitle, footer, children }: AuthCardProps) {
         <div className="mb-8 flex flex-col items-center text-center">
           <Link href="/" aria-label="Voltar à página inicial">
             <Image
-              src="/logo-perfil.jpg"
+              src={asset("/logo-perfil.jpg")}
               alt="Logo Forja Atômica"
               width={72}
               height={72}

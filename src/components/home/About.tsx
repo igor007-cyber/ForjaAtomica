@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionTitle } from "@/src/components/ui/SectionTitle";
+import { asset } from "@/src/utils/asset";
 
 const highlights = [
   "Peças de decoração e utilidades",
@@ -35,7 +36,7 @@ export function About() {
             className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-gold-500/40 to-forge-500/40 blur-lg"
           />
           <Image
-            src="/logo-lettering.jpg"
+            src={asset("/logo-lettering.jpg")}
             alt="Forja Atômica — Impressão 3D"
             width={520}
             height={293}
